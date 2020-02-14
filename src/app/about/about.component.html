@@ -1,0 +1,28 @@
+<p *ngIf="translationService.languageValue === 'english'" class="head">
+  Here are the skills that best describe me :
+</p>
+
+<p *ngIf="translationService.languageValue === 'french'" class="head">
+  Voici les compétences qui me qualifient le mieux :
+</p>
+
+<div class="skillList">
+  <div class="skillItem" *ngFor="let item of skills">
+    <img class="imgList" [src]="item.src" (click)="showContent(item.id)" />
+  </div>
+</div>
+
+<div class="skills">
+  <div *ngFor="let item of skills">
+    <div class="item" *ngIf="item.visible === true">
+      <img class="imgItem" [src]="item.src" /><br />
+      <h3>{{ item.skill }}</h3>
+      <p *ngIf="translationService.languageValue === 'english'">
+        {{ item.content[0] }}
+      </p>
+      <p *ngIf="translationService.languageValue === 'french'">
+        {{ item.content[1] }}
+      </p>
+    </div>
+  </div>
+</div>

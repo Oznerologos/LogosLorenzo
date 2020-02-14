@@ -1,0 +1,99 @@
+@font-face {
+  font-family: pixelmania;
+  src: url("./../../assets/fonts/Pixelmania.ttf");
+}
+
+@font-face {
+  font-family: cubic;
+  src: url("./../../assets/fonts/cubic.ttf");
+}
+
+@font-face {
+  font-family: bebas;
+  src: url("./../../assets/fonts/BebasNeue-Regular.ttf");
+}
+
+h2 {
+  font-family: pixelmania;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  text-align: center;
+  font-size: 5em;
+  margin: 30px auto;
+  padding: 10px 0px;
+  -webkit-animation: colorchange 50s;
+  cursor: default;
+}
+
+/* rgb(117, 7, 7) */
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */ {
+  0% {
+    color: white;
+    background-color: black;
+  }
+  10% {
+    color: rgb(117, 7, 7);
+    background-color: white;
+  }
+  20% {
+    color: white;
+    background-color: black;
+  }
+  30% {
+    color: rgb(117, 7, 7);
+    background-color: white;
+  }
+  40% {
+    color: white;
+    background-color: black;
+  }
+  50% {
+    color: rgb(117, 7, 7);
+    background-color: white;
+  }
+  60% {
+    color: white;
+    background-color: black;
+  }
+  70% {
+    color: rgb(117, 7, 7);
+    background-color: white;
+  }
+  80% {
+    color: white;
+    background-color: black;
+  }
+  90% {
+    color: rgb(117, 7, 7);
+    background-color: white;
+  }
+  100% {
+    color: white;
+    background-color: black;
+  }
+}
+
+p {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+  padding: 20px 0px;
+  font-family: bebas;
+}
+
+a {
+  text-decoration: none;
+  color: #e22116;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: white;
+  transition: 0.5s;
+}
+
+div {
+  cursor: default;
+}

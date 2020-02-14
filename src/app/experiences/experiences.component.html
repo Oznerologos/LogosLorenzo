@@ -1,0 +1,42 @@
+<p *ngIf="translationService.languageValue === 'english'" class="head">
+  Although I'm still a student, I experienced the professional world several
+  times:
+</p>
+
+<p *ngIf="translationService.languageValue === 'french'" class="head">
+  Bien que je sois toujours un étudiant, j'ai pu experimenter le monde
+  professionnel aux travers de plusieurs expériences :
+</p>
+
+<div class="experienceList">
+  <div class="experienceItem" *ngFor="let item of experiences">
+    <img class="imgList" [src]="item.src" (click)="showContent(item.id)" />
+  </div>
+</div>
+
+<div class="experiences">
+  <div *ngFor="let item of experiences">
+    <div class="item" *ngIf="item.visible === true">
+      <img class="imgItem" [src]="item.src" /><br />
+      <h3>
+        <ng-container
+          *ngIf="item.id === 3; then thenTemplate; else elseTemplate"
+        ></ng-container>
+        <ng-template #thenTemplate>
+          {{ item.experience }}
+        </ng-template>
+        <ng-template #elseTemplate>
+          <a [href]="item.url" target="_blank">{{ item.experience }}</a>
+        </ng-template>
+      </h3>
+
+      <p *ngIf="translationService.languageValue === 'english'">
+        {{ item.content[0] }}
+      </p>
+
+      <p *ngIf="translationService.languageValue === 'french'">
+        {{ item.content[1] }}
+      </p>
+    </div>
+  </div>
+</div>
